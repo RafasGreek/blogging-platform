@@ -1,10 +1,12 @@
 package com.rafael.blogging.user;
 
+import com.rafael.blogging.user.records.CreateUserRequest;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -20,10 +22,14 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    public User createUser(User user) {
-        if(userRepository.existsByUsername(user.getUsername())) {
+    public User createUser(CreateUserRequest createUserRequest) {
+        if(userRepository.existsByUsername(createUserRequest.username())) {
             throw new EntityExistsException("User already exists");
         }
+        User user = new User();
+        user.setUsername(createUserRequest.username());
+        user.setEmail(createUserRequest.email());
+        user.setCreatedAt(LocalDateTime.now());
         return userRepository.save(user);
     }
 
