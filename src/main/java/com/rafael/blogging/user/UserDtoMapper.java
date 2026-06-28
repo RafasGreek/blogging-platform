@@ -1,5 +1,6 @@
 package com.rafael.blogging.user;
 
+import com.rafael.blogging.user.records.UserDto;
 import org.springframework.stereotype.Component;
 
 @Component
