@@ -3,7 +3,7 @@
 ![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.0-brightgreen?logo=springboot)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
-
+![License](https://img.shields.io/badge/license-MIT-blue)
 
 A RESTful blogging API built with **Java** and **Spring Boot**. This application allows users to create accounts and publish blog posts.
 
